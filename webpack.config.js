@@ -14,6 +14,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
+			//  process data with .js extensions ignoring the node_modules
 			{
 				test: /\.js$/,
 				exclude: /(node_modules)/,
@@ -21,6 +22,12 @@ module.exports = {
 				query: {
 					presets: [ "latest", "stage-0", "react"]
 				}
+			},
+			//  helps process json data ignoring the node_modules
+			{
+				test: /\.json$/,
+				exclude: /(node_modules)/,
+				loader: 'json-loader'
 			}
 		]
 	}
