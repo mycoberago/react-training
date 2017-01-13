@@ -28,6 +28,16 @@ module.exports = {
 				test: /\.json$/,
 				exclude: /(node_modules)/,
 				loader: 'json-loader'
+			},
+			// handle css
+			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader!autoprefixer-loader'
+			},
+			// handle scss files
+			{
+				test: /\.scss$/,
+				loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
 			}
 		]
 	}
